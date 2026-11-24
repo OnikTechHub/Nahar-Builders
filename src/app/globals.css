@@ -21,7 +21,7 @@ body {
   background-color: #ffffff;
   color: #1F2429;
   font-family: 'Jost', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Cormorant Garamond Heading Font */
@@ -37,6 +37,7 @@ body {
 html {
   scroll-behavior: smooth;
   background-color: #ffffff;
+  overflow-x: clip;
 }
 
 /* Exact Nahar Builders Hero Slide Animation */

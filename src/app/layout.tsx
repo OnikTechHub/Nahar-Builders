@@ -34,10 +34,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full bg-white antialiased">
-      <body className="min-h-full flex flex-col bg-white text-slate-900 selection:bg-red-600 selection:text-white">
+    <html lang="en" className="h-full bg-white antialiased overflow-x-clip">
+      <body className="min-h-full flex flex-col bg-white text-slate-900 selection:bg-red-600 selection:text-white overflow-x-clip">
         <Navbar />
-        <main className="flex-1 bg-white">{children}</main>
+        <main className="flex-1 bg-white overflow-x-clip">{children}</main>
         <Footer />
       </body>
     </html>
