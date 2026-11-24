@@ -116,10 +116,10 @@ export default function Navbar() {
               );
             })}
 
-            {/* Get A Quote CTA button matching naharbuilders.com */}
+            {/* Get A Quote CTA button matching naharbuilders.com (routes directly to contact form) */}
             <div className="ml-3">
               <Link
-                href="/contact"
+                href="/contact#quote"
                 className="bg-[#8A7257] hover:bg-[#705944] text-white px-5 py-2.5 text-xs tracking-wider uppercase font-medium rounded transition shadow-sm inline-block"
               >
                 Get A Quote
@@ -130,10 +130,10 @@ export default function Navbar() {
           {/* Mobile Toggle Button */}
           <div className="flex items-center gap-2 lg:hidden">
             <Link
-              href="/contact"
+              href="/contact#quote"
               className="bg-[#8A7257] hover:bg-[#705944] text-white px-3.5 py-1.5 text-xs tracking-wider uppercase font-medium rounded transition"
             >
-              Quote
+              Get A Quote
             </Link>
             <button
               type="button"
@@ -241,7 +241,7 @@ export default function Navbar() {
 
               <div className="pt-3">
                 <Link
-                  href="/contact"
+                  href="/contact#quote"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full text-center block bg-[#8A7257] hover:bg-[#705944] text-white py-2.5 text-xs tracking-wider uppercase font-medium rounded transition"
                 >

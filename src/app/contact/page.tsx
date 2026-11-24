@@ -179,6 +179,25 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              {/* Official Website */}
+              <div className="flex items-center gap-3.5 text-xs sm:text-sm text-[#525960]">
+                <ExternalLink className="w-5 h-5 text-[#8A7257] shrink-0" />
+                <div>
+                  <span className="text-[#8A7257] block text-[11px] uppercase font-semibold">
+                    Official Website
+                  </span>
+                  <a
+                    href={OFFICIAL_CONTACT.websiteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-[#1F2429] hover:text-[#8A7257] transition flex items-center gap-1.5"
+                  >
+                    <span>www.naharbuilders.com</span>
+                    <ExternalLink className="w-3 h-3 text-[#8A7257]" />
+                  </a>
+                </div>
+              </div>
+
               {/* Working Hours */}
               <div className="flex items-center gap-3.5 text-xs sm:text-sm text-[#525960] pt-2 border-t border-[#E6E1DA]">
                 <Clock className="w-5 h-5 text-[#8A7257] shrink-0" />
@@ -191,8 +210,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Google Maps Card */}
-            <div className="p-6 bg-[#FAF8F5] border border-[#E6E1DA] rounded-lg space-y-3">
+            {/* Google Maps Card with Embedded Interactive Map */}
+            <div className="p-6 bg-[#FAF8F5] border border-[#E6E1DA] rounded-lg space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#1F2429]">
                   Location on Arakan Road
@@ -203,18 +222,29 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="text-xs font-semibold text-[#8A7257] hover:text-[#705944] flex items-center gap-1"
                 >
-                  <span>Open Google Maps</span>
+                  <span>Open in Google Maps</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
               <p className="text-xs text-[#525960] font-light">
                 Nahar Square is located at Holding No. 6/6, Arakan Road, Bahaddarhat, Chattogram — conveniently accessible from Chandgaon, Muradpur, and GEC Circle.
               </p>
+              <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden border border-[#E6E1DA] shadow-xs">
+                <iframe
+                  title="Nahar Builders Corporate Headquarters Map"
+                  src="https://maps.google.com/maps?q=Nahar+Square+Bahaddarhat+Chattogram&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Full Frontend-Validated Contact Form */}
-          <div className="lg:col-span-7 bg-[#FAF8F5] p-8 sm:p-10 rounded-lg border border-[#E6E1DA] shadow-xs">
+          {/* Right Column: Full Frontend-Validated Contact / Quote Form */}
+          <div id="quote" className="lg:col-span-7 scroll-mt-28 bg-[#FAF8F5] p-8 sm:p-10 rounded-lg border border-[#E6E1DA] shadow-xs">
             {isSubmitted ? (
               <div className="text-center py-10 space-y-4">
                 <div className="w-16 h-16 bg-[#8A7257]/10 text-[#8A7257] rounded-full flex items-center justify-center mx-auto border border-[#8A7257]/30 shadow-xs">
