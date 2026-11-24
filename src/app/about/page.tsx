@@ -1,152 +1,252 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { ShieldCheck, Award, Users, CheckCircle2, ArrowRight } from "lucide-react";
-import { ABOUT_DATA } from "@/data/homeData";
+import Link from "next/link";
+import { CheckCircle2, ShieldCheck, ArrowRight, Building2, MapPin, Compass, Target, Gem, Phone } from "lucide-react";
+import { OFFICIAL_CONTACT } from "@/data/navigation";
 
 export const metadata = {
-  title: "About Us | Nahar's Builders | Building Trust, Engineering Excellence",
-  description: "Learn about Nahar's Builders' legacy, executive engineering board, and commitment to structural excellence and transparent real estate ownership.",
+  title: "About Us | Nahar Builders | Premier Civil Engineering in Chattogram",
+  description:
+    "Learn about Nahar Builders' company overview, history, business focus, mission, vision, and engineering standards in Chattogram, Bangladesh.",
 };
 
 export default function AboutPage() {
+  const businessFocusAreas = [
+    {
+      title: "Civil Construction & Structural Safety",
+      description:
+        "Execution of reinforced concrete frames (RCC), deep pile foundations, and multi-level basements complying strictly with the Bangladesh National Building Code (BNBC).",
+      icon: Building2,
+    },
+    {
+      title: "Real Estate Development",
+      description:
+        "Developing high-end residential towers, luxury condominiums, and strategic commercial properties in prime growth corridors of Chattogram.",
+      icon: Compass,
+    },
+    {
+      title: "Specialized Healthcare Infrastructure",
+      description:
+        "Demonstrated technical capability delivering complex clinical landmarks such as the 19-storied Nahar Specialized Hospital with double-basement foundations.",
+      icon: ShieldCheck,
+    },
+    {
+      title: "Project Supervision & Laboratory Testing",
+      description:
+        "Continuous on-site engineering oversight, BUET-tested Grade 72/60 rebar verification, and batch-by-batch concrete cylinder compression tests.",
+      icon: Target,
+    },
+  ];
+
   return (
-    <div className="w-full bg-white">
-      {/* Page Header on Clean White / Soft Slate */}
-      <section className="bg-slate-50 border-b border-slate-200 py-16 lg:py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-600 bg-red-100/70 border border-red-200 px-3 py-1 rounded-full">
-            <span>ABOUT NAHAR&apos;S BUILDERS</span>
+    <div className="w-full bg-white font-jost text-[#1F2429]">
+      {/* 1. Page Header */}
+      <section className="bg-[#FAF8F5] border-b border-[#E6E1DA] py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[3px] text-[#8A7257]">
+            <span className="w-2 h-2 rounded-full bg-[#8A7257]" />
+            <span>About Nahar Builders</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
-            Building Landmarks, Elevating Lifestyles
+          <h1 className="font-cormorant text-4xl sm:text-6xl font-normal text-[#1F2429] tracking-tight leading-[1.1]">
+            Committed to Structural Integrity, Precision &amp; Client Trust
           </h1>
-          <p className="text-slate-600 text-base max-w-2xl leading-relaxed">
-            Discover our journey of blending corporate engineering discipline with a refreshingly transparent real estate experience across Bangladesh.
+          <p className="text-[#525960] text-base sm:text-lg max-w-3xl font-light leading-relaxed">
+            A distinguished civil construction and real estate development company in Chattogram, Bangladesh, delivering enduring residential towers, commercial complexes, and healthcare infrastructure.
           </p>
         </div>
       </section>
 
-      {/* Section 1: Overview */}
-      <section id="overview" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-red-600 block">
-              Company Overview
+      {/* 2. Two-Column Company Overview & Background (Using User's HeroImg) */}
+      <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Text Column */}
+          <div className="lg:col-span-6 space-y-6">
+            <span className="text-xs font-semibold uppercase tracking-[3px] text-[#8A7257] block">
+              Company Overview &amp; Experience
             </span>
-            <h2 className="text-3xl font-bold text-slate-900">
-              A Legacy Built on Unyielding Engineering Standards
+
+            <h2 className="font-cormorant text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1F2429] leading-tight">
+              Building Enduring Landmarks Across Chattogram
             </h2>
-            <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-              Nahar&apos;s Builders was founded with a clear mandate: to eliminate the ambiguity, hidden costs, and delayed handovers that too frequently plague the construction sector.
+
+            <p className="text-[#525960] text-base leading-relaxed font-light">
+              Nahar Builders is a premier civil construction and real estate development enterprise headquartered at Nahar Square, Bahaddarhat, Chattogram. Guided by an unwavering commitment to structural durability and architectural elegance, we deliver landmarks that stand resilient against time and environmental stress.
             </p>
-            <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-              With over 25 years of industry experience, 60+ completed landmarks, and more than 1,200 happy families residing in our developments, we stand as one of the most reliable and forward-thinking real estate builders in Chattogram and Dhaka.
+
+            <p className="text-[#525960] text-base leading-relaxed font-light">
+              Our multidisciplinary team of experienced civil engineers, MEP consultants, architects, and on-site directors manage complete project lifecycles — from soil mechanics and deep foundation piling to structural framing and turnkey interior handovers.
             </p>
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
-                <span className="text-2xl font-black text-red-600 block">25+</span>
-                <span className="text-xs font-bold text-slate-700">Years of Experience</span>
-              </div>
-              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
-                <span className="text-2xl font-black text-red-600 block">100%</span>
-                <span className="text-xs font-bold text-slate-700">On-Time Handover</span>
+
+            {/* Corporate Profile Card */}
+            <div className="p-6 bg-[#FAF8F5] rounded-lg border border-[#E6E1DA] space-y-3">
+              <span className="text-[#8A7257] text-xs font-semibold uppercase tracking-wider block">
+                Corporate Headquarters &amp; Operations
+              </span>
+              <p className="text-xs sm:text-sm font-medium text-[#1F2429] leading-relaxed">
+                {OFFICIAL_CONTACT.address}
+              </p>
+              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-[#525960]">
+                <span>Hotlines: <strong className="text-[#1F2429]">{OFFICIAL_CONTACT.phonePrimary}</strong></span>
+                <span>•</span>
+                <span>Email: <strong className="text-[#1F2429]">{OFFICIAL_CONTACT.emailGeneral}</strong></span>
               </div>
             </div>
           </div>
 
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-slate-200">
-            <Image
-              src="https://images.unsplash.com/photo-1541888946425-d0fbb1861564?auto=format&fit=crop&w=1200&q=80"
-              alt="Nahar's Builders Site Engineering"
-              fill
-              className="object-cover"
-            />
+          {/* Right Image Column: High-Res User Image from public/HeroImg/ */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative rounded-lg overflow-hidden shadow-xl border border-[#E6E1DA] aspect-[4/3]">
+              <Image
+                src="/HeroImg/img.avif"
+                alt="Nahar Builders Architectural Engineering Landmark"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#11161B]/80 via-transparent to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 text-white">
+                <span className="text-[11px] font-semibold text-[#C2AF98] uppercase tracking-[2px] block">
+                  Chattogram • Architectural Engineering
+                </span>
+                <p className="font-cormorant text-xl text-white mt-1">
+                  Precision Engineering, Seismic Safety &amp; Enduring Value
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Management */}
-      <section id="management" className="py-20 bg-slate-50 border-t border-slate-200">
+      {/* 3. Mission, Vision & Core Values Section */}
+      <section className="py-20 bg-[#F5F2EC] border-y border-[#E6E1DA]" id="mission">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-red-600 block">
-              Leadership
+            <span className="text-[#8A7257] text-xs font-semibold uppercase tracking-[3px] block">
+              Core Principles
             </span>
-            <h2 className="text-3xl font-bold text-slate-900">
-              Nahar&apos;s Management & Engineering Governance
+            <h2 className="font-cormorant text-3xl sm:text-5xl font-normal text-[#1F2429]">
+              Our Mission, Vision &amp; Philosophy
             </h2>
-            <p className="text-slate-600 text-sm">
-              Our executive board pairs veteran civil structural engineers with seasoned real estate legal advisors and progressive urban architects.
+            <p className="text-[#525960] text-sm sm:text-base font-light">
+              The fundamental standards governing every blueprint, foundation, and structural milestone at Nahar Builders.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center font-bold">
-                <Users className="w-6 h-6" />
+            {/* Card 1: Mission */}
+            <div className="bg-[#FAF8F5] p-8 rounded-lg border border-[#E6E1DA] shadow-xs space-y-4">
+              <div className="w-12 h-12 rounded-lg bg-[#8A7257]/10 text-[#8A7257] flex items-center justify-center">
+                <Target className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900">Engineering Board</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Supervising every concrete pour, rebar layout, and foundation load test with zero deviation from national building codes.
+              <span className="text-[#8A7257] text-xs font-semibold uppercase tracking-wider block">
+                01 / Our Mission
+              </span>
+              <h3 className="font-cormorant text-2xl font-normal text-[#1F2429]">
+                Architectural Excellence
+              </h3>
+              <p className="text-[#525960] text-xs sm:text-sm font-light leading-relaxed">
+                To translate innovative architectural visions into structurally resilient, aesthetically superior physical landmarks that strictly adhere to national building codes and elevate the urban environment of Chattogram.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center font-bold">
-                <ShieldCheck className="w-6 h-6" />
+            {/* Card 2: Vision */}
+            <div className="bg-[#FAF8F5] p-8 rounded-lg border border-[#E6E1DA] shadow-xs space-y-4">
+              <div className="w-12 h-12 rounded-lg bg-[#8A7257]/10 text-[#8A7257] flex items-center justify-center">
+                <Compass className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900">Legal Audit Panel</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Executing comprehensive freehold mutation title searches and ensuring 100% legal clarity for seamless buyer registration.
+              <span className="text-[#8A7257] text-xs font-semibold uppercase tracking-wider block">
+                02 / Our Vision
+              </span>
+              <h3 className="font-cormorant text-2xl font-normal text-[#1F2429]">
+                National Benchmark of Quality
+              </h3>
+              <p className="text-[#525960] text-xs sm:text-sm font-light leading-relaxed">
+                To stand as the most trusted civil engineering and real estate development partner in Bangladesh, recognized for seismic durability, transparent client partnerships, and timely milestone handovers.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center font-bold">
-                <Award className="w-6 h-6" />
+            {/* Card 3: Values & Philosophy */}
+            <div className="bg-[#FAF8F5] p-8 rounded-lg border border-[#E6E1DA] shadow-xs space-y-4">
+              <div className="w-12 h-12 rounded-lg bg-[#8A7257]/10 text-[#8A7257] flex items-center justify-center">
+                <Gem className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900">Client Care Division</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Dedicated personal managers keeping clients informed with bi-weekly photographic milestones and direct communication.
+              <span className="text-[#8A7257] text-xs font-semibold uppercase tracking-wider block">
+                03 / Core Philosophy
+              </span>
+              <h3 className="font-cormorant text-2xl font-normal text-[#1F2429]">
+                Trust &amp; Technical Precision
+              </h3>
+              <p className="text-[#525960] text-xs sm:text-sm font-light leading-relaxed">
+                We believe architecture is more than creating concrete structures; it is building lasting human trust, backed by rigorous on-site supervision, BUET-certified materials, and zero compromise on safety.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 3: Vision & Quality */}
-      <section id="vision" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-md space-y-8">
-          <div className="max-w-2xl space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-red-600">
-              Vision & Quality Benchmarks
-            </span>
-            <h2 className="text-3xl font-bold text-slate-900">
-              Uncompromising Quality in Every Square Foot
-            </h2>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              We pledge to build structures that withstand tests of time and nature, prioritizing safety, eco-conscious efficiency, and long-term asset value.
+      {/* 4. Business Focus & Areas of Operation */}
+      <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="text-center max-w-2xl mx-auto space-y-3">
+          <span className="text-[#8A7257] text-xs font-semibold uppercase tracking-[3px] block">
+            Capabilities &amp; Scope
+          </span>
+          <h2 className="font-cormorant text-3xl sm:text-5xl font-normal text-[#1F2429]">
+            Business Focus &amp; Areas of Operation
+          </h2>
+          <p className="text-[#525960] text-sm sm:text-base font-light">
+            Comprehensive civil engineering and development solutions across Chattogram Metropolitan Area.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {businessFocusAreas.map((area, idx) => {
+            const Icon = area.icon;
+            return (
+              <div
+                key={idx}
+                className="p-8 bg-[#FAF8F5] rounded-lg border border-[#E6E1DA] hover:border-[#8A7257]/50 transition flex items-start gap-5 shadow-xs"
+              >
+                <div className="w-12 h-12 rounded-lg bg-white border border-[#E6E1DA] text-[#8A7257] flex items-center justify-center shrink-0">
+                  <Icon className="w-6 h-6" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-cormorant text-2xl font-normal text-[#1F2429]">
+                    {area.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#525960] font-light leading-relaxed">
+                    {area.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* 5. Bottom Action CTA */}
+        <div className="p-8 sm:p-10 bg-[#FAF8F5] rounded-lg border border-[#E6E1DA] flex flex-col sm:flex-row items-center justify-between gap-6 mt-12">
+          <div className="space-y-1.5 text-center sm:text-left">
+            <h4 className="font-cormorant text-2xl sm:text-3xl font-normal text-[#1F2429]">
+              Explore Our Landmark Construction Projects
+            </h4>
+            <p className="text-xs sm:text-sm text-[#525960] font-light">
+              Review completed residential towers, corporate spaces, and healthcare institutions.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
-            <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-              <span className="text-red-600 font-bold text-sm block">01. Seismic Safety</span>
-              <p className="text-xs text-slate-600">Strict adherence to BNBC 2020 Zone 2/3 earthquake parameters.</p>
-            </div>
-            <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-              <span className="text-red-600 font-bold text-sm block">02. Concrete Quality</span>
-              <p className="text-xs text-slate-600">Automated batch mixing with minimum 5000 PSI strength verification.</p>
-            </div>
-            <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-              <span className="text-red-600 font-bold text-sm block">03. Green Architecture</span>
-              <p className="text-xs text-slate-600">Rainwater harvesting, natural cross-ventilation, and rooftop gardens.</p>
-            </div>
-            <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-              <span className="text-red-600 font-bold text-sm block">04. 100% Transparency</span>
-              <p className="text-xs text-slate-600">Itemized billing, certified deeds, and zero surprise escalation fees.</p>
-            </div>
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <Link
+              href="/projects"
+              className="px-6 py-3 bg-[#8A7257] hover:bg-[#705944] text-white text-xs tracking-wider uppercase font-medium rounded transition flex items-center gap-2 shadow-sm"
+            >
+              <span>View Portfolio</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <Link
+              href="/contact"
+              className="px-6 py-3 border border-[#8A7257] text-[#8A7257] hover:bg-[#8A7257] hover:text-white text-xs tracking-wider uppercase font-medium rounded transition"
+            >
+              <span>Contact Us</span>
+            </Link>
           </div>
         </div>
       </section>
