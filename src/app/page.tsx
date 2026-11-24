@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
 import { ArrowRight, MapPin, Building, Building2, Compass, Layers } from "lucide-react";
 
 export default function HomePage() {
@@ -431,6 +432,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* 7. Why Choose Us / Company Strengths */}
+      <WhyChooseUs />
     </div>
   );
 }
