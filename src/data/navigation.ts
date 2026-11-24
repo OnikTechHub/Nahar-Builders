@@ -1,4 +1,4 @@
-export interface NavSubItem {
+export interface SubNavItem {
   name: string;
   href: string;
   description?: string;
@@ -7,118 +7,50 @@ export interface NavSubItem {
 export interface NavItem {
   name: string;
   href: string;
-  dropdown?: NavSubItem[];
+  dropdown?: SubNavItem[];
 }
 
 export const NAV_ITEMS: NavItem[] = [
+  { name: "Home", href: "/" },
   {
-    name: "HOME",
-    href: "/",
-  },
-  {
-    name: "ABOUT US",
+    name: "About Us",
     href: "/about",
     dropdown: [
-      {
-        name: "Company Overview",
-        href: "/about#overview",
-        description: "Our history, engineering legacy, and corporate credibility.",
-      },
-      {
-        name: "Nahar's Management",
-        href: "/about#management",
-        description: "Visionary leadership steering structural innovation.",
-      },
-      {
-        name: "Vision & Quality",
-        href: "/about#vision",
-        description: "Our uncompromising benchmarks for construction quality.",
-      },
+      { name: "Company Overview", href: "/about" },
+      { name: "Mission & Philosophy", href: "/about#mission" },
     ],
   },
   {
-    name: "SERVICES",
+    name: "Services",
     href: "/services",
     dropdown: [
-      {
-        name: "Residential Construction",
-        href: "/services#residential",
-        description: "Luxury apartments, penthouses, and gated residences.",
-      },
-      {
-        name: "Commercial Developments",
-        href: "/services#commercial",
-        description: "Corporate glass towers and dynamic retail hubs.",
-      },
-      {
-        name: "Architectural Design & Consultancy",
-        href: "/services#architectural",
-        description: "Structural engineering, MEP design, and master planning.",
-      },
-      {
-        name: "Interior & Turnkey Solutions",
-        href: "/services#interior",
-        description: "End-to-end bespoke fit-outs and project execution.",
-      },
+      { name: "All Services", href: "/services" },
+      { name: "Machinery & Equipment", href: "/services#equipment" },
     ],
   },
   {
-    name: "PROJECTS",
+    name: "Projects",
     href: "/projects",
     dropdown: [
-      {
-        name: "Ongoing Projects",
-        href: "/projects?status=Ongoing",
-        description: "Landmarks currently under high-standard construction.",
-      },
-      {
-        name: "Completed Projects",
-        href: "/projects?status=Completed",
-        description: "Handed-over residences with thriving homeowner communities.",
-      },
-      {
-        name: "Upcoming Landmarks",
-        href: "/projects?status=Upcoming",
-        description: "Future iconic projects open for pre-launch registration.",
-      },
+      { name: "All Projects Portfolio", href: "/projects" },
+      { name: "Nahar Specialized Hospital", href: "/projects#hospital" },
     ],
   },
-  {
-    name: "GALLERY",
-    href: "/gallery",
-  },
-  {
-    name: "CONTACT",
-    href: "/contact",
-  },
+  { name: "Contact", href: "/contact" },
 ];
 
-export const COMPANY_CONTACT = {
-  name: "Nahar's Builders",
-  tagline: "BUILDING TRUST, ENGINEERING EXCELLENCE",
-  phonePrimary: "+880 1819-334455",
-  phoneSecondary: "+880 1711-223344",
+export const OFFICIAL_CONTACT = {
+  companyName: "Nahar Builders",
+  websiteUrl: "https://www.naharbuilders.com/",
+  phone: "+880 1811 44 77 52",
+  phoneRaw: "+8801811447752",
+  phonePrimary: "+880 1811 44 77 52",
+  phoneSecondary: "+880 1977 46 48 53",
+  email: "info@naharbuilders.com",
   emailGeneral: "info@naharbuilders.com",
-  emailSales: "sales@naharbuilders.com",
-  offices: [
-    {
-      title: "Chattogram Corporate Headquarters",
-      address: "Nahar's Tower, Level 8, CDA Avenue, GEC Circle, Chattogram, Bangladesh",
-      phone: "+880 1819-334455",
-      isPrimary: true,
-    },
-    {
-      title: "Dhaka Regional Office",
-      address: "Suite 402, Nahar's Heritage, Road 11, Block-D, Banani, Dhaka-1213, Bangladesh",
-      phone: "+880 1711-223344",
-      isPrimary: false,
-    },
-  ],
-  workingHours: "Saturday – Thursday: 9:00 AM – 7:30 PM",
-  socialLinks: [
-    { platform: "Facebook", href: "https://facebook.com/naharbuilders" },
-    { platform: "LinkedIn", href: "https://linkedin.com/company/naharbuilders" },
-    { platform: "Instagram", href: "https://instagram.com/naharbuilders" },
-    { platform: "YouTube", href: "https://youtube.com/@naharbuilders" },
-  ],
+  emailAlternate: "engrjony@gmail.com",
+  address: "Head Office: Nahar Square (1st Floor), Holding No. 6/6, Arakan Road, Bahaddarhat, Chattogram, Bangladesh",
+  shortAddress: "Nahar Square (1st Floor), Bahaddarhat, Chattogram",
+  googleMapsUrl: "https://maps.google.com/?q=Nahar+Square+Bahaddarhat+Chattogram",
+  workingHours: "Saturday – Thursday: 9:00 AM – 7:00 PM",
 };
