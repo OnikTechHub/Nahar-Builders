@@ -146,6 +146,17 @@ export default function ServicesPage() {
               );
             })}
           </div>
+
+          {/* Direct link to dedicated Machinery Fleet page */}
+          <div className="text-center pt-4">
+            <Link
+              href="/equipment"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#8A7257] hover:bg-[#705944] text-white text-xs font-medium uppercase tracking-wider rounded transition shadow-sm"
+            >
+              <span>Explore Full Machinery Fleet &amp; Logistics</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </div>
       </section>
 
