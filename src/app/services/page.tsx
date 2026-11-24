@@ -1,200 +1,202 @@
 import React from "react";
 import Link from "next/link";
-import { Building2, Building, Compass, ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
-import { CORE_SERVICES } from "@/data/homeData";
+import {
+  Building2,
+  Building,
+  Layers,
+  RefreshCw,
+  ClipboardCheck,
+  FileCheck2,
+  ArrowRight,
+  ShieldCheck,
+  CheckCircle2,
+  Boxes,
+  Wind,
+  Layers as MaterialsIcon,
+  Factory,
+} from "lucide-react";
+import { VERIFIED_SERVICES_LIST, SUPPLY_CHAIN_ITEMS } from "@/data/homeData";
 
 export const metadata = {
-  title: "Services | Nahar's Builders | Comprehensive Real Estate & Construction",
-  description: "Explore Nahar's Builders core services: Residential Construction, Commercial Developments, Architectural Design & Consultancy, and Interior & Turnkey Solutions.",
+  title: "Services | Nahar Builders | Luxury Engineering & Construction Solutions",
+  description:
+    "Comprehensive architectural design, civil engineering, project management, and heavy material logistics by Nahar Builders in Chattogram, Bangladesh.",
 };
 
 export default function ServicesPage() {
+  const serviceIcons = [
+    Building2,
+    Building,
+    Layers,
+    RefreshCw,
+    ClipboardCheck,
+    FileCheck2,
+  ];
+
+  const supplyIcons = [Boxes, Wind, MaterialsIcon, Factory];
+
   return (
-    <div className="w-full bg-white">
-      {/* Page Header on Clean White / Soft Slate */}
-      <section className="bg-slate-50 border-b border-slate-200 py-16 lg:py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-600 bg-red-100/70 border border-red-200 px-3 py-1 rounded-full">
-            <span>OUR EXPERTISE</span>
+    <div className="w-full bg-white font-jost text-[#1F2429]">
+      {/* 1. Page Header matching naharbuilders.com/services */}
+      <section className="bg-[#FAF8F5] border-b border-[#E6E1DA] py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-center">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[3px] text-[#8A7257]">
+            <span className="w-2 h-2 rounded-full bg-[#8A7257]" />
+            <span>What We Deliver</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
-            Engineering & Construction Services
+          <h1 className="font-cormorant text-4xl sm:text-6xl font-normal text-[#1F2429] tracking-tight leading-[1.1]">
+            Engineering &amp; Design Capabilities
           </h1>
-          <p className="text-slate-600 text-base max-w-2xl leading-relaxed">
-            Delivering full-lifecycle civil construction, architectural master planning, and turnkey property solutions with rigorous safety standards.
+          <p className="text-[#525960] text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed">
+            Comprehensive architectural design, civil engineering, project management, and heavy material logistics.
           </p>
         </div>
       </section>
 
-      {/* Detailed Services Breakdown */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-        {/* Service 1: Residential */}
-        <div id="residential" className="scroll-mt-28 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-red-600 block">
-              Residential Development
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-              Luxury Apartments, Penthouses & Family Communities
-            </h2>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              We design and construct premium residential living environments with special emphasis on acoustic insulation, natural ventilation, natural daylight, and family lifestyle amenities like rooftop infinity pools and landscaped sky parks.
-            </p>
-            <div className="space-y-2 pt-2">
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>Customizable 3 to 5-bedroom luxury apartments</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>Heavy-duty seismic frame construction (BNBC 2020 compliant)</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>100% Generator power backup with sound-attenuated canopies</span>
-              </div>
-            </div>
-            <div className="pt-4">
-              <Link
-                href="/projects?status=Ongoing"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-red-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition"
+      {/* 2. Core 6 Services Listing */}
+      <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {VERIFIED_SERVICES_LIST.map((service, index) => {
+            const Icon = serviceIcons[index % serviceIcons.length];
+
+            return (
+              <div
+                key={service.id}
+                className="bg-[#FAF8F5] rounded-lg p-8 border border-[#E6E1DA] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6"
               >
-                <span>View Residential Projects</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#8A7257] bg-[#8A7257]/10 px-3 py-1 rounded">
+                      {service.tag}
+                    </span>
+                    <div className="w-10 h-10 rounded-lg bg-white border border-[#E6E1DA] text-[#8A7257] flex items-center justify-center">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  <h3 className="font-cormorant text-2xl sm:text-3xl font-normal text-[#1F2429]">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-sm text-[#525960] font-light leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <div className="pt-4 border-t border-[#E6E1DA]/80 space-y-2">
+                    {service.features.map((feature) => (
+                      <div key={feature} className="flex items-start gap-2.5 text-xs text-[#525960] font-light">
+                        <CheckCircle2 className="w-4 h-4 text-[#8A7257] shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-[#E6E1DA]">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#8A7257] hover:text-[#705944] transition"
+                  >
+                    <span>Request Consultation</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 3. Building Material Import & Supply Chain */}
+      <section className="py-20 lg:py-24 bg-[#F5F2EC] border-y border-[#E6E1DA]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <span className="text-[#8A7257] text-xs font-semibold uppercase tracking-[3px] block">
+              Logistics
+            </span>
+            <h2 className="font-cormorant text-3xl sm:text-5xl font-normal text-[#1F2429]">
+              Material Import &amp; Supply Chain
+            </h2>
+            <p className="text-[#525960] text-sm sm:text-base font-light">
+              Importing certified building components and machinery for high-rise infrastructure.
+            </p>
           </div>
-          <div className="p-8 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
-              <Building2 className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold text-slate-900">Residential Highlights</h3>
-            <p className="text-xs text-slate-600">
-              Every Nahar&apos;s Builders residential project is planned with zero compromise on child safety, privacy, and community integration.
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {SUPPLY_CHAIN_ITEMS.map((item, idx) => {
+              const SupplyIcon = supplyIcons[idx % supplyIcons.length];
+              return (
+                <div
+                  key={idx}
+                  className="bg-[#FAF8F5] p-6 rounded-lg border border-[#E6E1DA] text-center space-y-3 shadow-xs"
+                >
+                  <div className="w-12 h-12 rounded-full bg-white border border-[#E6E1DA] text-[#8A7257] flex items-center justify-center mx-auto">
+                    <SupplyIcon className="w-6 h-6" />
+                  </div>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-[#8A7257] block">
+                    {item.tag}
+                  </span>
+                  <h4 className="font-cormorant text-xl font-normal text-[#1F2429]">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-[#525960] font-light leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Public & Private Sector Engagements */}
+      <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Public Sector Card */}
+          <div className="bg-[#FAF8F5] p-8 sm:p-10 rounded-lg border-l-4 border-l-[#8A7257] border border-[#E6E1DA] space-y-4 shadow-xs">
+            <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#8A7257] block">
+              Public Sector
+            </span>
+            <h3 className="font-cormorant text-3xl font-normal text-[#1F2429]">
+              Government Construction
+            </h3>
+            <p className="text-sm text-[#525960] font-light leading-relaxed">
+              Nahar Builders possesses full technical capacity, heavy fleet machinery, and compliance certifications to execute government infrastructure, public works, and sub-contracting engagements with strict adherence to BNBC standards.
+            </p>
+          </div>
+
+          {/* Private Sector Card */}
+          <div className="bg-[#FAF8F5] p-8 sm:p-10 rounded-lg border-l-4 border-l-[#8A7257] border border-[#E6E1DA] space-y-4 shadow-xs">
+            <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#8A7257] block">
+              Private Sector
+            </span>
+            <h3 className="font-cormorant text-3xl font-normal text-[#1F2429]">
+              Private &amp; Commercial Projects
+            </h3>
+            <p className="text-sm text-[#525960] font-light leading-relaxed">
+              We collaborate with private land owners, real estate developers, and commercial entities to design, construct, and manage bespoke residential towers and commercial centers across Bangladesh.
             </p>
           </div>
         </div>
 
-        {/* Service 2: Commercial */}
-        <div id="commercial" className="scroll-mt-28 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1 p-8 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
-              <Building className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold text-slate-900">Commercial Landmarks</h3>
-            <p className="text-xs text-slate-600">
-              High visibility corporate glass towers built with energy-saving curtain walls, smart security turnstiles, and automated basement parking.
+        {/* 5. Bottom Call-To-Action Banner */}
+        <div className="p-8 sm:p-10 bg-[#FAF8F5] rounded-lg border border-[#E6E1DA] flex flex-col sm:flex-row items-center justify-between gap-6 mt-8">
+          <div className="space-y-1.5 text-center sm:text-left">
+            <h4 className="font-cormorant text-2xl sm:text-3xl font-normal text-[#1F2429]">
+              Need Turnkey Civil Engineering or CDA Approvals?
+            </h4>
+            <p className="text-xs sm:text-sm text-[#525960] font-light">
+              Speak directly with our senior civil engineers at our corporate head office in Bahaddarhat, Chattogram.
             </p>
           </div>
-          <div className="order-1 lg:order-2 space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-red-600 block">
-              Commercial Developments
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-              Corporate Office Towers & Modern Retail Hubs
-            </h2>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              We create flagship corporate addresses designed to elevate business prestige and tenant productivity. Featuring column-free modular floorplates, destination-dispatch elevators, and LEED gold compliance.
-            </p>
-            <div className="space-y-2 pt-2">
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>Multi-tier automated basement parking systems</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>Energy-saving low-E acoustic glass curtain facade</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>High-capacity smart elevators and NFPA fire fighting systems</span>
-              </div>
-            </div>
-            <div className="pt-4">
-              <Link
-                href="/projects?category=Commercial"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-red-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition"
-              >
-                <span>View Commercial Projects</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Service 3: Architectural */}
-        <div id="architectural" className="scroll-mt-28 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-red-600 block">
-              Design & Consultancy
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-              Architectural Design & Engineering Consultancy
-            </h2>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              Our multidisciplinary design studio provides comprehensive 3D Building Information Modeling (BIM), finite element structural seismic modeling, and statutory approval consultancy for Rajuk, CDA, and municipal bodies.
-            </p>
-            <div className="space-y-2 pt-2">
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>Dynamic finite element structural load simulations</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>Fast-track CDA & Rajuk plan approvals and clearance</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>Soil mechanics and deep foundation pile load testing</span>
-              </div>
-            </div>
-          </div>
-          <div className="p-8 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
-              <Compass className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold text-slate-900">Consultancy Solutions</h3>
-            <p className="text-xs text-slate-600">
-              From land feasibility audits to structural safety certifications, we offer end-to-end technical consultancy for landowners and developers.
-            </p>
-          </div>
-        </div>
-
-        {/* Service 4: Turnkey */}
-        <div id="interior" className="scroll-mt-28 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1 p-8 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold text-slate-900">Turnkey Fitouts</h3>
-            <p className="text-xs text-slate-600">
-              Experience the ease of moving into a fully furnished, architect-crafted space without coordinating with multiple third-party vendors.
-            </p>
-          </div>
-          <div className="order-1 lg:order-2 space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-red-600 block">
-              Interior & Turnkey
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-              Interior & Turnkey Solutions
-            </h2>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              We turn empty floor shells into masterfully finished living and workspace interiors. Every custom closet, modular kitchen, and smart automation system is fabricated with premium materials and backed by our post-handover warranty.
-            </p>
-            <div className="space-y-2 pt-2">
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>German and Italian hardware & sanitary fittings</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>Custom modular kitchen and acoustic ceiling treatments</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>1-Year comprehensive maintenance warranty</span>
-              </div>
-            </div>
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <Link
+              href="/contact"
+              className="px-6 py-3 bg-[#8A7257] hover:bg-[#705944] text-white text-xs tracking-wider uppercase font-medium rounded transition flex items-center gap-2 shadow-sm"
+            >
+              <span>Get A Quote</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
       </section>
