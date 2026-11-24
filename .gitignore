@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Temporary research, logs & scraping dumps
+RESEARCH_NOTES.md
+all_nahar_projects.json
+official_projects_data.json
+*.html
+
