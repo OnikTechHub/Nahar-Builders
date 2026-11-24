@@ -59,12 +59,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/projects#hospital" className="hover:text-[#C2AF98] transition">
+                <Link href="/hospital" className="hover:text-[#C2AF98] transition">
                   Nahar Hospital
                 </Link>
               </li>
               <li>
-                <Link href="/services#equipment" className="hover:text-[#C2AF98] transition">
+                <Link href="/equipment" className="hover:text-[#C2AF98] transition">
                   Machinery Fleet
                 </Link>
               </li>

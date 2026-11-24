@@ -150,8 +150,8 @@ export default function ProjectsPage() {
                   </p>
                 </div>
 
-                {/* Card Action Buttons: View Details (Modal) & Inquire */}
-                <div className="pt-4 border-t border-[#E6E1DA] flex items-center justify-between gap-3">
+                {/* Card Action Buttons: View Details (Modal) & Inquire / Dedicated Page */}
+                <div className="pt-4 border-t border-[#E6E1DA] flex items-center justify-between gap-2">
                   <button
                     type="button"
                     onClick={() => setSelectedProject(project)}
@@ -162,12 +162,22 @@ export default function ProjectsPage() {
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
                   </button>
 
-                  <Link
-                    href="/contact"
-                    className="px-3.5 py-1.5 text-xs font-medium text-[#8A7257] hover:text-white bg-[#8A7257]/10 hover:bg-[#8A7257] rounded transition"
-                  >
-                    Inquire
-                  </Link>
+                  <div className="flex items-center gap-1.5">
+                    {project.slug === "nahar-specialized-hospital" && (
+                      <Link
+                        href="/hospital"
+                        className="px-2.5 py-1.5 text-xs font-medium text-[#11161B] hover:text-white bg-slate-200 hover:bg-[#11161B] rounded transition"
+                      >
+                        Showcase
+                      </Link>
+                    )}
+                    <Link
+                      href="/contact"
+                      className="px-3 py-1.5 text-xs font-medium text-[#8A7257] hover:text-white bg-[#8A7257]/10 hover:bg-[#8A7257] rounded transition"
+                    >
+                      Inquire
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

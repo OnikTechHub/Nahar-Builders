@@ -117,18 +117,28 @@ export default function ProjectDetailsModal({
               Official inquiry hotline: <strong className="text-[#1F2429]">{OFFICIAL_CONTACT.phonePrimary}</strong>
             </div>
 
-            <div className="flex items-center gap-3 w-full sm:w-auto">
+            <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
               <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 sm:flex-none px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-[#1F2429] text-xs font-medium tracking-wider uppercase rounded transition"
+                className="flex-1 sm:flex-none px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-[#1F2429] text-xs font-medium tracking-wider uppercase rounded transition"
               >
                 Close
               </button>
+              {project.slug === "nahar-specialized-hospital" && (
+                <Link
+                  href="/hospital"
+                  onClick={onClose}
+                  className="flex-1 sm:flex-none px-4 py-2.5 bg-[#11161B] hover:bg-[#252E38] text-white text-xs font-medium tracking-wider uppercase rounded transition flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Dedicated Showcase</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#C2AF98]" />
+                </Link>
+              )}
               <Link
                 href="/contact"
                 onClick={onClose}
-                className="flex-1 sm:flex-none px-5 py-2.5 bg-[#8A7257] hover:bg-[#705944] text-white text-xs font-medium tracking-wider uppercase rounded transition flex items-center justify-center gap-1.5 shadow-sm"
+                className="flex-1 sm:flex-none px-4 py-2.5 bg-[#8A7257] hover:bg-[#705944] text-white text-xs font-medium tracking-wider uppercase rounded transition flex items-center justify-center gap-1.5 shadow-sm"
               >
                 <span>Consult On This Project</span>
                 <ArrowRight className="w-3.5 h-3.5" />

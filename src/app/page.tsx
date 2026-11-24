@@ -213,7 +213,9 @@ export default function HomePage() {
                     Healthcare • Infrastructure
                   </span>
                   <h3 className="font-cormorant text-2xl font-normal text-[#1F2429]">
-                    Nahar Specialized Hospital
+                    <Link href="/hospital" className="hover:text-[#8A7257] transition">
+                      Nahar Specialized Hospital
+                    </Link>
                   </h3>
                   <p className="text-[#525960] text-xs sm:text-sm font-light leading-relaxed mt-2">
                     19-Storied Modern Healthcare Facility featuring double basement foundation &amp; clinical infrastructure.
@@ -225,7 +227,13 @@ export default function HomePage() {
                     <MapPin className="w-3.5 h-3.5 text-[#8A7257]" />
                     <span>Chattogram</span>
                   </span>
-                  <span>19 Stories</span>
+                  <Link
+                    href="/hospital"
+                    className="text-[#8A7257] hover:text-[#705944] font-medium flex items-center gap-1"
+                  >
+                    <span>View Showcase</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
                 </div>
               </div>
             </div>

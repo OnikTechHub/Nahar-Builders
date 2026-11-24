@@ -25,7 +25,7 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/services",
     dropdown: [
       { name: "All Services", href: "/services" },
-      { name: "Machinery & Equipment", href: "/services#equipment" },
+      { name: "Machinery & Equipment", href: "/equipment" },
     ],
   },
   {
@@ -33,7 +33,7 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/projects",
     dropdown: [
       { name: "All Projects Portfolio", href: "/projects" },
-      { name: "Nahar Specialized Hospital", href: "/projects#hospital" },
+      { name: "Nahar Specialized Hospital", href: "/hospital" },
     ],
   },
   { name: "Contact", href: "/contact" },
