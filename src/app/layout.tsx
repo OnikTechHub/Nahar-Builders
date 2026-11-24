@@ -18,9 +18,13 @@ export const metadata: Metadata = {
     "Nahar Square",
   ],
   icons: {
-    icon: "/nahar-builders-logo.jpg",
-    shortcut: "/nahar-builders-logo.jpg",
-    apple: "/nahar-builders-logo.jpg",
+    icon: [
+      { url: "/nahar/logo-dark.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/nahar/logo-dark.png",
+    apple: "/nahar/logo-dark.png",
   },
 };
 
