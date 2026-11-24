@@ -1,152 +1,257 @@
-export interface Project {
+export interface RealProject {
   id: string;
   slug: string;
   title: string;
-  category: "Residential" | "Commercial";
-  status: "Ongoing" | "Completed" | "Upcoming";
+  category: "Residential" | "Healthcare" | "Commercial" | "Hospitality" | "Infrastructure";
+  status: "Completed" | "Ongoing" | "Landmark";
   location: string;
-  area: string;
-  units: string;
-  completionYear: string;
+  stories: string;
   image: string;
   featured: boolean;
   tagline: string;
   description: string;
-  highlights: string[];
-  architect: string;
+  verifiedDetails: string[];
 }
 
-export const FEATURED_PROJECTS: Project[] = [
+export const VERIFIED_PROJECTS: RealProject[] = [
   {
-    id: "proj-1",
-    slug: "nahars-heritage-residence",
-    title: "Nahar's Heritage Residence",
-    category: "Residential",
-    status: "Ongoing",
-    location: "Nasirabad Housing Society, Chattogram",
-    area: "2,450 – 3,250 sq.ft",
-    units: "28 Luxury Suites (B+G+14)",
-    completionYear: "Q4 2026",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    id: "proj-hospital",
+    slug: "nahar-specialized-hospital",
+    title: "Nahar Specialized Hospital",
+    category: "Healthcare",
+    status: "Landmark",
+    location: "Chattogram, Bangladesh",
+    stories: "19 Stories • Double Basement",
+    image: "/nahar/projects/nahar-hospital.png",
     featured: true,
-    tagline: "Timeless contemporary architectural living in Chattogram's elite enclave",
-    description: "Nahar's Heritage Residence embodies refined urban sanctuary living. Designed with generous panoramic balconies, double-height grand entrance lobby, rooftop swimming lounge, and Japanese elevator systems.",
-    highlights: [
-      "Double-height marbled lobby with 24/7 security concierge",
-      "Earthquake resistant RCC frame as per BNBC 2020 codes",
-      "Infinity edge rooftop swimming pool and landscaped sky lounge",
-      "100% standby generator backup for full apartment loads"
+    tagline: "19-Storied Landmark Healthcare Facility equipped with double basement parking & clinical units",
+    description:
+      "A flagship 19-storied healthcare landmark engineered with a heavy-duty reinforced double-basement foundation, specialized clinical gas and MEP infrastructure, and dedicated emergency vertical circulation.",
+    verifiedDetails: [
+      "19 Stories with reinforced concrete double-basement foundation",
+      "Specialized clinical engineering, medical gas, and cleanroom air handling",
+      "Seismic resistance and structural safety compliant with BNBC standards",
+      "Dedicated high-capacity hospital elevators and emergency evacuation staircases",
     ],
-    architect: "Studio Vistara Architects"
   },
   {
-    id: "proj-2",
-    slug: "nahars-skyline-commercial-hub",
-    title: "Nahar's Skyline Commercial Hub",
-    category: "Commercial",
-    status: "Ongoing",
-    location: "Agrabad Commercial Area, Chattogram",
-    area: "65,000 sq.ft Commercial Space",
-    units: "15 Floors + 3 Basement Parking",
-    completionYear: "Q2 2027",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-    featured: true,
-    tagline: "Next-generation corporate glass tower engineered for business giants",
-    description: "An architectural icon in Chattogram's commercial heartland. Featuring double-glazed heat-reflective low-E curtain wall facade, high-speed destination dispatch elevators, and state-of-the-art building management systems.",
-    highlights: [
-      "LEED Gold certified energy-saving acoustic glass curtain facade",
-      "3-tier automated basement parking accommodating 140+ vehicles",
-      "Multi-zone VRF HVAC system with independent tenant metering",
-      "Integrated BMS security with biometric turnstiles"
-    ],
-    architect: "Form & Function Design Studio"
-  },
-  {
-    id: "proj-3",
-    slug: "nahars-bay-view-heights",
-    title: "Nahar's Bay View Heights",
+    id: "proj-nakeeb",
+    slug: "nakeeb-heights",
+    title: "Nakeeb Heights",
     category: "Residential",
     status: "Completed",
-    location: "South Khulshi Residential Area, Chattogram",
-    area: "2,850 sq.ft Luxury Condominiums",
-    units: "30 Units (100% Handed Over)",
-    completionYear: "2024",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+    location: "Chandgaon R/A, Chattogram",
+    stories: "14 Stories • Double Basement",
+    image: "/nahar/projects/nakeeb-heights.png",
     featured: true,
-    tagline: "Scenic hill-facing residential sanctuary delivered strictly on schedule",
-    description: "Delivered 3 months ahead of contracted schedule, Nahar's Bay View Heights stands as a testimonial to Nahar's Builders punctual delivery ethos. Residents enjoy panoramic bay views, serene surroundings, and imported finishes.",
-    highlights: [
-      "100% On-time delivery with zero compromise on structural quality",
-      "Imported Spanish porcelain tiles and Grohe sanitary fixtures",
-      "Community gym, indoor play arena, and private barbecue deck",
-      "Registered homeowners association active and self-sustaining"
+    tagline: "14-Storied Luxury Residential Building with Double Basement",
+    description:
+      "A prestigious 14-storied luxury residential tower situated in Chandgaon Residential Area, built with modern architectural aesthetics, optimized natural ventilation, double basement, and strict structural safety standards.",
+    verifiedDetails: [
+      "14 Stories of contemporary residential apartments with double basement",
+      "Prime residential location in Chandgaon R/A, Chattogram",
+      "BUET-compliant earthquake-resistant RCC frame construction",
+      "Modern lifestyle amenities, standby generator power, and 24/7 security",
     ],
-    architect: "Architectura Nova"
   },
   {
-    id: "proj-4",
-    slug: "nahars-imperial-avenue",
-    title: "Nahar's Imperial Avenue",
-    category: "Commercial",
+    id: "proj-hotel",
+    slug: "hotel-tower-inn",
+    title: "Hotel Tower Inn",
+    category: "Hospitality",
     status: "Completed",
-    location: "Road 11, Banani, Dhaka",
-    area: "42,000 sq.ft Mixed Retail & Corporate",
-    units: "10 Stories + 2 Basement Levels",
-    completionYear: "2023",
-    image: "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80",
+    location: "Jubilee Road, Chattogram",
+    stories: "10 Stories • 110 Rooms",
+    image: "/nahar/projects/hotel-tower-inn.png",
     featured: true,
-    tagline: "Prestigious high-street flagship corporate retail destination",
-    description: "A luxury lifestyle and corporate hub in Banani, hosting premier international fashion retailers and executive headquarters. Features grand 20-ft atrium, column-free office plates, and high pedestrian accessibility.",
-    highlights: [
-      "Column-free flexible floor layout facilitating custom modular fitouts",
-      "Automated NFPA-compliant fire suppression & pressurized staircases",
-      "Fiber-optic pre-cabled telecom infrastructure",
-      "High retail footfall street presence with valet parking"
+    tagline: "10-Storied 3-Star Hotel Building comprising approximately 110 rooms",
+    description:
+      "A prominent 10-storied 3-star hospitality and commercial landmark situated on Jubilee Road, Chattogram, housing 110 well-appointed guest rooms, banquet halls, and corporate meeting spaces.",
+    verifiedDetails: [
+      "10 Stories accommodating 110 premium hotel rooms and suites",
+      "Strategic central location on Jubilee Road commercial artery",
+      "Banquet facilities, multi-cuisine dining, and corporate meeting halls",
+      "Complete NFPA fire-safety compliance and centralized electro-mechanical systems",
     ],
-    architect: "Studio Axis Dhaka"
   },
   {
-    id: "proj-5",
-    slug: "nahars-palisades-lakefront",
-    title: "Nahar's Palisades Lakefront",
+    id: "proj-akil",
+    slug: "akil-tower",
+    title: "Akil Tower",
     category: "Residential",
-    status: "Upcoming",
-    location: "Foy's Lake Foothills, Chattogram",
-    area: "3,100 – 4,800 sq.ft Penthouses",
-    units: "18 Exclusive Duplexes & Penthouses",
-    completionYear: "Pre-Launch (2027)",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
-    featured: true,
-    tagline: "Ultra-luxury waterfront sanctuary blending nature and futuristic architecture",
-    description: "Upcoming master-planned lakefront residences offering private elevator foyers, cantilevered infinity plunge pools on select duplex terraces, and biophilic garden envelopes with serene foothill vistas.",
-    highlights: [
-      "Private elevator access opening directly into individual apartment foyers",
-      "Private plunge pool and landscaped vertical gardens on upper duplexes",
-      "Solar-assisted smart home automation for lighting and climate",
-      "Dedicated concierge, private boat dock access, and wellness spa"
+    status: "Completed",
+    location: "Mozaffor Nagar, Chattogram",
+    stories: "10 Stories",
+    image: "/nahar/projects/akil-tower.png",
+    featured: false,
+    tagline: "10-Storied Residential Apartment Building crafted with modern engineering",
+    description:
+      "A 10-storied contemporary residential apartment tower in Mozaffor Nagar, built with precision RCC framing, spacious layouts, and certified construction materials.",
+    verifiedDetails: [
+      "10 Stories of residential family condominiums",
+      "Modern exterior facade with optimized natural light and airflow",
+      "Earthquake-resistant structural frame verified under BNBC guidelines",
+      "Dedicated elevator and reliable utility infrastructure",
     ],
-    architect: "Urban Nexus International"
   },
   {
-    id: "proj-6",
-    slug: "nahars-zenith-tower",
-    title: "Nahar's Zenith Corporate Tower",
-    category: "Commercial",
-    status: "Upcoming",
-    location: "Tejgaon Commercial Belt, Dhaka",
-    area: "88,000 sq.ft Grade-A Offices",
-    units: "22 Stories Architectural Icon",
-    completionYear: "Design Approved (2028)",
-    image: "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1200&q=80",
-    featured: true,
-    tagline: "Futuristic 22-story sustainable headquarters landmark",
-    description: "Conceived as an environmental benchmark in Dhaka's modern industrial-commercial revitalization corridor. Featuring triple-height arrival court, rooftop helipad provision, and carbon-neutral energy capture.",
-    highlights: [
-      "Targeting LEED Platinum green building accreditation",
-      "High-speed intelligent gearless elevators with regenerative drives",
-      "Conference auditorium, executive rooftop restaurant, and club",
-      "Direct rapid expressway connection and multi-tier security"
+    id: "proj-alhaj-sa",
+    slug: "alhaj-sa-tower",
+    title: "Alhaj SA Tower",
+    category: "Residential",
+    status: "Completed",
+    location: "Hillview R/A, Chattogram",
+    stories: "9 Stories",
+    image: "/nahar/projects/alhaj-sa-tower.png",
+    featured: false,
+    tagline: "9-Storied Residential Apartment Building crafted with high structural standards",
+    description:
+      "A 9-storied high-standard residential development in Hillview Residential Area, offering serene living spaces with robust structural design and quality finishing.",
+    verifiedDetails: [
+      "9 Stories of residential apartments in tranquil Hillview R/A",
+      "Continuous on-site supervision and material cylinder compression testing",
+      "Intercom system, automated water reservoir, and 24/7 security",
+      "Prime residential neighborhood with convenient arterial road connectivity",
     ],
-    architect: "Atelier Zenith Architects"
-  }
+  },
+  {
+    id: "proj-supreme",
+    slug: "supreme-subhan",
+    title: "Supreme Subhan",
+    category: "Residential",
+    status: "Completed",
+    location: "Asadgonj, Chattogram",
+    stories: "10 Stories",
+    image: "/nahar/projects/supreme-subhan.png",
+    featured: false,
+    tagline: "10-Storied Residential Apartment Building with spacious floor plans",
+    description:
+      "A prominent 10-storied residential building located at Asadgonj, engineered for family living with large floorplates, seismic safety, and durable architectural finishing.",
+    verifiedDetails: [
+      "10 Stories designed with family-centric layout efficiency",
+      "Engineered foundation and reinforced concrete beam-column joints",
+      "Centrally positioned in Asadgonj with quick market and school access",
+      "Full compliance with local building authority clearances",
+    ],
+  },
+  {
+    id: "proj-frank",
+    slug: "frank-mariada",
+    title: "Frank Mariada",
+    category: "Residential",
+    status: "Completed",
+    location: "War Cemetery Road, Chattogram",
+    stories: "12 Stories",
+    image: "/nahar/projects/frank-mariada.png",
+    featured: false,
+    tagline: "12-Storied Residential Apartment Building with modern exterior architecture",
+    description:
+      "A 12-storied luxury residential landmark in the historic War Cemetery Road area, combining elegant exterior facade design with superior civil engineering standards.",
+    verifiedDetails: [
+      "12 Stories of modern luxury residential residences",
+      "Distinguished architectural facade with weather-resistant exterior finish",
+      "Deep pile foundation and high-yield Grade 72/60 rebar framework",
+      "High-speed elevator and multi-tier emergency security",
+    ],
+  },
+  {
+    id: "proj-mismark",
+    slug: "mismark-nur",
+    title: "Mismark Nur",
+    category: "Residential",
+    status: "Completed",
+    location: "Hillview, Chattogram",
+    stories: "8 Stories",
+    image: "/nahar/projects/mismark-nur.png",
+    featured: false,
+    tagline: "8-Storied Residential Apartment Building located in a prime neighborhood",
+    description:
+      "An 8-storied residential tower in Hillview, providing functional family apartments designed for long-term structural durability and urban comfort.",
+    verifiedDetails: [
+      "8 Stories of comfortable family apartment residences",
+      "Designed with natural cross-ventilation and daylight orientation",
+      "Structural engineering compliant with BNBC seismic specifications",
+      "Full municipal water and electricity backup systems",
+    ],
+  },
+  {
+    id: "proj-patiya",
+    slug: "patiya-nahar-park-resort",
+    title: "Patiya Nahar Park & Resort",
+    category: "Hospitality",
+    status: "Completed",
+    location: "Patiya, Chattogram",
+    stories: "Resort Complex",
+    image: "/nahar/projects/patiya-resort.png",
+    featured: false,
+    tagline: "Recreational resort development featuring swimming pool, Platinum hall, and landscaping",
+    description:
+      "A comprehensive recreational and leisure resort development in Patiya, featuring modern hospitality infrastructure, scenic landscaping, swimming pool, and corporate event halls.",
+    verifiedDetails: [
+      "Expansive resort layout with customized recreational zoning",
+      "Modern swimming pool with advanced filtration and safety systems",
+      "Platinum banquet and convention hall for social and corporate events",
+      "Architectural landscaping integrated with natural environment",
+    ],
+  },
+  {
+    id: "proj-mrt",
+    slug: "dhaka-metro-rail-airport-terminal",
+    title: "Dhaka Metro Rail & Airport 3rd Terminal",
+    category: "Infrastructure",
+    status: "Completed",
+    location: "Dhaka, Bangladesh",
+    stories: "Mega Infrastructure",
+    image: "/nahar/projects/dhaka-metro-rail.png",
+    featured: false,
+    tagline: "Key sub-contractor partner to Bangladesh's flagship MRT & Airport Terminal projects",
+    description:
+      "Nahar Builders contributed heavy civil machinery, logistical fleet, and skilled technical workforce as a vital sub-contractor partner on national mega-infrastructure landmarks.",
+    verifiedDetails: [
+      "Sub-contracting engineering partner on national mega-projects",
+      "Heavy excavation, logistics, and material supply chain deployment",
+      "Stringent international safety standards and timeline compliance",
+      "Demonstration of large-scale public infrastructure execution capacity",
+    ],
+  },
+  {
+    id: "proj-lohagara-trade",
+    slug: "lohagara-trade-centre",
+    title: "Lohagara Trade Centre",
+    category: "Commercial",
+    status: "Ongoing",
+    location: "Lohagara, Chattogram",
+    stories: "7 Stories Commercial",
+    image: "/nahar/projects/lohagara-trade-centre.png",
+    featured: false,
+    tagline: "7-Storied Commercial Market with retail shops, wide entrances, and fire safety systems",
+    description:
+      "A modern 7-storied commercial shopping center and trade market under construction in Lohagara, featuring wide customer concourses, retail storefronts, and dedicated parking.",
+    verifiedDetails: [
+      "7 Stories of organized commercial and retail shopping avenues",
+      "Double-width entrance corridors and modern customer elevators",
+      "Integrated NFPA compliant fire suppression and emergency exits",
+      "Strategic highway connectivity in Lohagara business center",
+    ],
+  },
+  {
+    id: "proj-school-market",
+    slug: "nahar-school-market",
+    title: "Nahar School Market",
+    category: "Commercial",
+    status: "Ongoing",
+    location: "Lohagara, Chattogram",
+    stories: "Commercial Market",
+    image: "/nahar/projects/nahar-school-market.png",
+    featured: false,
+    tagline: "Modern commercial development featuring wide shop frontages, dedicated parking, lift, and fire safety",
+    description:
+      "An ongoing commercial development in Lohagara designed to provide premier retail premises with spacious shop frontages, customer elevator, and structured parking.",
+    verifiedDetails: [
+      "Modern commercial market layout optimized for high customer footfall",
+      "Wide storefronts, dedicated customer parking, and high-capacity lift",
+      "Full safety compliance including automated fire protection",
+      "High commercial viability in a rapidly expanding commercial hub",
+    ],
+  },
 ];
